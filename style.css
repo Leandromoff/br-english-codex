@@ -144,6 +144,42 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.lesson-links {
+  list-style: none;
+  margin-top: 24px;
+}
+.lesson-links li {
+  margin: 8px 0;
+}
+.lesson-links a {
+  color: #3478f6;
+  text-decoration: underline;
+}
+.tabs {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.tab-button {
+  background: none;
+  border: 1px solid #3478f6;
+  color: #3478f6;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.tab-button.active {
+  background: #3478f6;
+  color: #fff;
+}
+.tab-content {
+  display: none;
+  margin-top: 20px;
+}
+.tab-content.active {
+  display: block;
+}
 
 /* ==== FOOTER ==== */
 footer {
