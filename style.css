@@ -15,7 +15,8 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   padding: 0 20px;
   height: 60px;
   position: relative;
@@ -27,6 +28,7 @@ body {
   color: #fff;
   font-weight: 700;
   font-size: 1.25rem;
+  margin-right: 16px;
 }
 .logo-icon {
   display: flex;
@@ -47,7 +49,6 @@ body {
   display: flex;
   list-style: none;
   gap: 24px;
-  margin: 0 auto;         /* <<< centraliza horizontalmente */
 }
 .menu-item a,
 .dropdown-toggle {
