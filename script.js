@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamb = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
   hamb.addEventListener('click', () => {
+    const expanded = hamb.getAttribute('aria-expanded') === 'true';
+    hamb.setAttribute('aria-expanded', String(!expanded));
     menu.classList.toggle('open');
   });
 
