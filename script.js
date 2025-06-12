@@ -24,9 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.classList.toggle('open');
   });
 
-  // Botão de acessibilidade
-  const acc = document.getElementById('accessibility');
-  acc.addEventListener('click', () => {
-    document.body.classList.toggle('high-contrast');
-  });
 });
