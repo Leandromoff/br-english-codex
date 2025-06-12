@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Dropdown Grammar
-  const dropBtn = document.querySelector('.has-dropdown > .dropdown-toggle');
-  dropBtn.addEventListener('click', (e) => {
-    const expanded = dropBtn.getAttribute('aria-expanded') === 'true';
-    dropBtn.setAttribute('aria-expanded', String(!expanded));
+  const dropBtns = document.querySelectorAll('.has-dropdown > .dropdown-toggle');
+  dropBtns.forEach((dropBtn) => {
+    dropBtn.addEventListener('click', () => {
+      const expanded = dropBtn.getAttribute('aria-expanded') === 'true';
+      dropBtn.setAttribute('aria-expanded', String(!expanded));
+    });
   });
 
   // Fecha dropdown ao clicar fora
   document.addEventListener('click', (e) => {
-    const dropdown = document.querySelector('.dropdown');
-    if (
-      !dropBtn.contains(e.target) &&
-      !dropdown.contains(e.target)
-    ) {
-      dropBtn.setAttribute('aria-expanded', 'false');
-    }
+    dropBtns.forEach((btn) => {
+      const dropdown = btn.nextElementSibling;
+      if (dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 
   // Menu hamburger
