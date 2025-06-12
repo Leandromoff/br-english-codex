@@ -57,3 +57,7 @@ Este projeto foi construído do zero usando apenas tecnologias web nativas, sem 
 ## Inspiração
 
 Este layout e a organização de níveis foram inspirados no site [Test-English](https://test-english.com/).  
+
+## Licenca
+
+Distribuido sob a licenca MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
