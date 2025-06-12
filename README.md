@@ -1,53 +1,41 @@
-# Conversor de Texto para Fala
+# BR-English
 
-Uma aplicação web simples para converter texto em fala, utilizando a API Web Speech do navegador com priorização das vozes Google de alta qualidade.
+Uma página web simples e elegante para aprender inglês onde e quando quiser, com conteúdos completos para Grammar, Vocabulary, Listening e Reading, organizados em cinco níveis.
 
 ## Funcionalidades
 
-O Conversor de Texto para Fala oferece uma interface intuitiva para transformar texto digitado em áudio falado. A aplicação utiliza a API Web Speech nativa dos navegadores modernos, priorizando as vozes Google de alta qualidade quando disponíveis.
+O **BR-English** oferece:
 
-### Principais recursos:
-
-- Conversão de texto para fala em tempo real
-- Seleção entre três idiomas: Inglês (EUA), Inglês (Reino Unido) e Português (Brasil)
-- Priorização automática das vozes Google para cada idioma:
-  - Google US English para Inglês (EUA)
-  - Google UK English Male para Inglês (Reino Unido)
-  - Google português do Brasil para Português (Brasil)
-- Controle de velocidade da fala
-- Contagem automática de palavras e caracteres
-- Interface responsiva para uso em dispositivos móveis e desktop
+- **Modo escuro**: layout moderno em dark mode para conforto visual.  
+- **Navegação intuitiva**: menu no header com itens “Grammar”, “Vocabulary”, “Listening” e “Reading”.  
+- **Dropdown de níveis**: ao passar ou clicar em “Grammar”, exibe níveis A1, A2, B1, B1+ e B2, cada um com ícone colorido.  
+- **Responsividade**: troca automaticamente para menu “hamburger” em dispositivos móveis.  
+- **Acessibilidade**: botão flutuante para alternar alto contraste.  
+- **Seção hero centralizada**: título e subtítulo centralizados verticalmente na tela, com tipografia clara.  
 
 ## Tecnologias Utilizadas
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Web Speech API
+- **HTML5** para marcação semântica (`<header>`, `<nav>`, `<main>`, `<footer>`).  
+- **CSS3** para estilo, incluindo Flexbox, dark mode e media queries.  
+- **JavaScript (ES6+)** para interações: dropdown, menu móvel e alternância de acessibilidade.
 
 ## Compatibilidade
 
-A aplicação é compatível com a maioria dos navegadores modernos que suportam a API Web Speech, incluindo:
+Compatível com a maioria dos navegadores modernos que suportam CSS flexível e ES6:
 
-- Google Chrome (recomendado para melhor qualidade de voz)
-- Mozilla Firefox
-- Microsoft Edge (versão Chromium)
-- Safari (suporte parcial)
-
-Para melhor experiência e acesso às vozes Google de alta qualidade, recomenda-se o uso do Google Chrome.
+- Google Chrome (recomendado)  
+- Mozilla Firefox  
+- Microsoft Edge (Chromium)  
+- Safari (suporte parcial ao ES6)
 
 ## Como usar
 
-1. Acesse a aplicação através do link de deployment
-2. Digite o texto desejado na área de texto
-3. Selecione o idioma preferido:
-   - Inglês (EUA) - Utiliza a voz Google US English
-   - Inglês (Reino Unido) - Utiliza a voz Google UK English Male
-   - Português (Brasil) - Utiliza a voz Google português do Brasil
-4. Ajuste a velocidade da fala conforme necessário
-5. Clique em "Reproduzir" para ouvir o texto
-6. Para interromper a reprodução, clique em "Parar"
+1. Clone ou baixe este repositório.  
+2. Coloque os três arquivos na mesma pasta:
+   - `index.html`
+   - `styles.css`
+   - `script.js`  
+3. Abra `index.html` em seu navegador preferido.  
+4. Navegue pelo menu, experimente o dropdown de níveis e o botão de acessibilidade.
 
-## Desenvolvimento
-
-Este projeto foi desenvolvido como uma versão simplificada inspirada no site [text-to-speech.online](https://www.text-to-speech.online/), utilizando apenas tecnologias web padrão e gratuitas.
+## Estrutura de arquivos
