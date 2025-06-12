@@ -33,7 +33,7 @@ Compatível com navegadores modernos:
 1. Clone ou baixe este repositório.  
 2. Coloque os três arquivos na mesma pasta:
    - `index.html`
-   - `styles.css`
+   - `style.css`
    - `script.js`  
 3. Abra `index.html` em seu navegador.  
 4. Navegue pelo menu, experimente o dropdown de níveis e o botão de acessibilidade.
@@ -41,14 +41,14 @@ Compatível com navegadores modernos:
 ## Estrutura de arquivos
 
 ├── index.html
-├── styles.css
+├── style.css
 └── script.js
 
 ## Desenvolvimento
 
 Este projeto foi construído do zero usando apenas tecnologias web nativas, sem frameworks externos. Sinta-se à vontade para:
 
-- Adaptar cores e tipografia no `styles.css`.  
+- Adaptar cores e tipografia no `style.css`.
 - Inserir novos níveis ou seções no `index.html`.  
 - Estender comportamentos em `script.js` (por exemplo, adicionar animações ou suporte a múltiplos dropdowns).
 
