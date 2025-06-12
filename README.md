@@ -8,7 +8,7 @@ O **BR-English** oferece:
 
 - **Modo escuro** moderno, inspirado em layouts minimalistas para conforto visual.  
 - **Menu de navegação** com itens “Grammar”, “Vocabulary”, “Listening” e “Reading”.  
-- **Dropdown de níveis** em “Grammar”: A1, A2, B1, B1+ e B2, cada um com ícone circular colorido.  
+- **Dropdown de níveis** em “Grammar”, “Vocabulary”, “Listening” e “Reading”: A1, A2, B1, B1+ e B2, cada um com ícone circular colorido.
 - **Responsividade**: menu “hamburger” para dispositivos móveis.  
 - **Acessibilidade**: botão flutuante de alto contraste.  
 - **Seção hero centralizada** com título e subtítulo posicionados verticalmente no centro da viewport.
