@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const expanded = hamb.getAttribute('aria-expanded') === 'true';
     hamb.setAttribute('aria-expanded', String(!expanded));
     menu.classList.toggle('open');
+    hamb.classList.toggle('open');
   });
 
 });
