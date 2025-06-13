@@ -236,6 +236,15 @@ footer {
   .menu.open > li {
     padding: 12px 0;
   }
+  /* Dropdowns ocupam espaco em vez de sobrepor itens */
+  .has-dropdown { position: static; }
+  .has-dropdown .dropdown {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 8px;
+  }
 }
 
 @media (max-width: 480px) {
