@@ -154,6 +154,14 @@ body {
   color: #e0e0e0;
   max-width: 720px;
 }
+
+/* ==== CONTENT CONTAINER ==== */
+.content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
 .lesson-links {
   list-style: none;
   margin-top: 24px;
