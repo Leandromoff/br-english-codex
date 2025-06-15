@@ -207,9 +207,12 @@ body {
 /* ==== TABLE ==== */
 table.simple-table {
   margin: 16px auto;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 table.simple-table th,
 table.simple-table td {
