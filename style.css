@@ -216,11 +216,18 @@ table.simple-table {
 }
 table.simple-table th,
 table.simple-table td {
-  border: 1px solid #e0e0e0;
-  padding: 8px;
+  border: 1px solid #444;
+  padding: 12px 16px;
 }
 table.simple-table th {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+table.simple-table tbody tr:nth-child(odd) {
+  background: #1a1a1a;
+}
+table.simple-table tbody tr:nth-child(even) {
+  background: #161616;
 }
 
 /* ==== EXAMPLE BLOCK ==== */
