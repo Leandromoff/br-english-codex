@@ -307,6 +307,7 @@ footer {
 .section-subtitle {
   color: #00bcd4;
   font-weight: 700;
+  font-size: 1.5rem;
   margin-top: 24px;
   margin-bottom: 8px;
   text-align: left;
@@ -342,7 +343,7 @@ footer {
   margin: 20px 0;
   color: #ccc;
 }
-.note-box h5 {
+.note-box h4 {
   color: #00bcd4;
   margin-top: 0;
   font-weight: 700;
