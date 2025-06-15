@@ -286,3 +286,64 @@ footer {
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
 }
+/* ==== CUSTOM DARK MODE ELEMENTS ==== */
+.intro-heading {
+  color: #ffffff;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.forms-box {
+  background: #222;
+  border-left: 4px solid #bbbbbb;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+.forms-box li {
+  margin-left: 20px;
+  color: #ffffff;
+}
+.section-subtitle {
+  color: #00bcd4;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.example-container {
+  background: #013220;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 12px;
+  color: #ffffff;
+}
+.example-container mark,
+.highlight {
+  color: #d2ff8d;
+  background: none;
+  font-weight: 700;
+}
+.example-container p {
+  margin-top: 8px;
+}
+.correct::after {
+  content: " \2714";
+  color: #98ff98;
+}
+.incorrect::after {
+  content: " \274c";
+  color: #ff8080;
+}
+.note-box {
+  background: #333;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 20px 0;
+  color: #ccc;
+}
+.note-box h5 {
+  color: #00bcd4;
+  margin-top: 0;
+  font-weight: 700;
+}
