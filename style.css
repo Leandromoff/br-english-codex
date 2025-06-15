@@ -155,6 +155,11 @@ body {
   max-width: 720px;
 }
 
+/* Espaçamento entre seções de conteúdo */
+.content h3 {
+  margin-top: 24px;
+}
+
 /* ==== CONTENT CONTAINER ==== */
 .content {
   max-width: 800px;
