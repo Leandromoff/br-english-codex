@@ -160,7 +160,7 @@
       <h1>Formas simples do verbo to be</h1>
       <div class="tabs">
       <button class="tab-button active" data-tab="explanation">Explanation</button>
-      <button class="tab-button" data-tab="exercises">Exemples</button>
+      <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
       <section id="explanation" class="tab-content active">
         <p>A seguir, você encontra todas as formas do verbo <em>to be</em> no presente simples, organizadas em afirmativa, negativa, interrogativa e respostas curtas.</p>
@@ -435,13 +435,15 @@
       // Adiciona botões de áudio para cada exemplo
       document.querySelectorAll('#exercises .example-container p').forEach(p => {
         const text = p.textContent.trim();
+        const cleanedText = text.replace(/^\d+\.\s*/, '');
         const btn = document.createElement('button');
         btn.textContent = '🔊';
         btn.className = 'tts-btn';
         btn.type = 'button';
         btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(text);
+          const utter = new SpeechSynthesisUtterance(cleanedText);
           utter.lang = 'en-US';
+          utter.rate = 0.8;
           const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
           if (voice) utter.voice = voice;
           speechSynthesis.speak(utter);
