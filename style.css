@@ -366,6 +366,20 @@ footer {
   font-size: 1rem;
 }
 
+/* ==== CALLOUT ==== */
+.callout {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 6px;
+  color: #333;
+}
+
+.text-green {
+  color: #3cb043;
+}
+
 /* Botão de reprodução de áudio nos exemplos */
 .tts-btn {
   margin-left: 8px;
