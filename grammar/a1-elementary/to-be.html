@@ -434,13 +434,15 @@
 
       // Adiciona botões de áudio para cada exemplo
       document.querySelectorAll('#exercises .example-container p').forEach(p => {
+        const text = p.textContent.trim();
         const btn = document.createElement('button');
         btn.textContent = '🔊';
         btn.className = 'tts-btn';
         btn.type = 'button';
         btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(p.textContent);
-          const voice = speechSynthesis.getVoices().find(v => v.name === 'Google US English');
+          const utter = new SpeechSynthesisUtterance(text);
+          utter.lang = 'en-US';
+          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
           if (voice) utter.voice = voice;
           speechSynthesis.speak(utter);
         });
