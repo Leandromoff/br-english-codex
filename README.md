@@ -42,7 +42,11 @@ Compatível com navegadores modernos:
 
 ├── index.html
 ├── style.css
-└── script.js
+├── script.js
+├── grammar/
+│   └── a1-elementary/
+└── images/
+    └── vocabulary/
 
 ## Desenvolvimento
 
