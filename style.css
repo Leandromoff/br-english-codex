@@ -365,3 +365,13 @@ footer {
   font-weight: 700;
   font-size: 1rem;
 }
+
+/* Botão de reprodução de áudio nos exemplos */
+.tts-btn {
+  margin-left: 8px;
+  background: none;
+  border: none;
+  color: #00bcd4;
+  cursor: pointer;
+  font-size: 1rem;
+}
