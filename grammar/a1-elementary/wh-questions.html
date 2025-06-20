@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BR-English is a responsive site with grammar, vocabulary, listening and reading resources from levels A1 to B2." />
-  <title>A1 Grammar Lessons and Exercises</title>
+  <title>Wh-questions – palavras interrogativas e ordem das palavras</title>
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
@@ -158,30 +158,17 @@
 
   <main class="hero">
     <div class="content">
-      <h1>A1 Grammar Lessons and Exercises</h1>
-      <p>Blocos gramaticais essenciais do nível A1</p>
-      <ul class="lesson-links">
-        <li><a href="to-be.html">Verbo “to be” – formas e contrações (am / is / are)</a></li>
-        <li><a href="possessives-and-pronouns.html">Pronomes pessoais do sujeito e adjetivos possessivos (I / my, you / your…)</a></li>
-        <li><a href="demonstratives.html">Demonstrativos (this, that, these, those)</a></li>
-        <li><a href="articles.html">Artigos indefinidos, definidos e ausência de artigo (a / an, the, Ø)</a></li>
-        <li><a href="plurals.html">Formação do plural – regulares e irregulares</a></li>
-        <li><a href="basic-word-order.html">Ordem básica da frase afirmativa (Sujeito + Verbo + Objeto)</a></li>
-        <li><a href="present-simple.html">Presente simples – forma afirmativa, negativa e interrogativa (do / does)</a></li>
-        <li><a href="adverbs-of-frequency.html">Advérbios de frequência (always, often, never…) e posição na frase</a></li>
-        <li><a href="object-vs-subject-pronouns.html">Pronomes objeto vs. pronomes sujeito (me / I, her / she…)</a></li>
-        <li><a href="wh-questions.html">Wh-questions – palavras interrogativas e ordem das palavras</a></li>
-        <li><a href="prepositions-place-time.html">Preposições de lugar (in, on, under…) e de tempo (at, on, in)</a></li>
-        <li><a href="imperative.html">Imperativo – ordens afirmativas e negativas</a></li>
-        <li><a href="can-cant.html">Can / can’t para habilidade, possibilidade e permissão</a></li>
-        <li><a href="present-continuous-vs-simple.html">Presente contínuo (am / is / are + -ing) vs. presente simples</a></li>
-        <li><a href="there-is-there-are.html">There is / There are + substantivos contáveis e incontáveis</a></li>
-        <li><a href="some-any.html">Some / any com substantivos contáveis e incontáveis</a></li>
-        <li><a href="past-be-and-past-simple.html">Passado do to be (was / were) e passado simples básico (verbos regulares e irregulares)</a></li>
-        <li><a href="be-going-to.html">Be going to para planos e previsões (ponte do fim do A1 para o A2)</a></li>
-        <li><a href="comparatives-and-superlatives.html">Comparativos e superlativos (older, the oldest)</a></li>
-        <li><a href="basic-conjunctions.html">Conjunções básicas (and, but, or, so, because)</a></li>
-      </ul>
+      <h1>Wh-questions – palavras interrogativas e ordem das palavras</h1>
+      <div class="tabs">
+      <button class="tab-button active" data-tab="explanation">Explanation</button>
+      <button class="tab-button" data-tab="exercises">Exercises</button>
+    </div>
+    <section id="explanation" class="tab-content active">
+      <p>Conteúdo em breve.
+    </section>
+      <section id="exercises" class="tab-content">
+        <p>Exercícios em breve.</p>
+      </section>
     </div>
   </main>
 
@@ -191,5 +178,19 @@
   </div>
 
   <script src="../../script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.tab-button');
+      const contents = document.querySelectorAll('.tab-content');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
