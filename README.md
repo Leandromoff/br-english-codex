@@ -11,7 +11,7 @@ O **BR-English** oferece:
 - **Dropdown de níveis** em “Grammar”, “Vocabulary”, “Listening” e “Reading”: A1, A2, B1, B1+ e B2, cada um com ícone circular colorido.
 - **Responsividade**: menu “hamburger” para dispositivos móveis.  
 - **Acessibilidade**: botão flutuante de alto contraste.  
-- **Seção hero centralizada** com título e subtítulo posicionados verticalmente no centro da viewport.
+- **Seção hero centralizada** em uma coluna central, com título e subtítulo alinhados no centro da viewport.
 
 ## Tecnologias Utilizadas
 

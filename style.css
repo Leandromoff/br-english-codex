@@ -11,6 +11,15 @@ body {
   line-height: 1.5;
 }
 
+.page {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 800px) 1fr;
+}
+.page > * {
+  grid-column: 2;
+}
+
+
 /* ==== NAVBAR ==== */
 .navbar {
   display: flex;
@@ -268,6 +277,7 @@ footer {
 
 /* ==== RESPONSIVO ==== */
 @media (max-width: 768px) {
+  .page { grid-template-columns: 1fr; }
   .menu { display: none; }
   .hamburger { display: flex; }
   .menu.open {
