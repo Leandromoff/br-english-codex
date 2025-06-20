@@ -139,10 +139,11 @@ body {
   min-height: 100svh;      /* preenche 100% da altura em dispositivos moveis */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* posiciona conteudo no topo */
+  align-items: flex-start;     /* alinha conteudo à esquerda */
   max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0;
+  padding: 20px;
 }
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
@@ -163,8 +164,7 @@ body {
 /* ==== CONTENT CONTAINER ==== */
 .content {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 20px;     /* remove centralizacao */
   text-align: left;
 }
 .lesson-links {
