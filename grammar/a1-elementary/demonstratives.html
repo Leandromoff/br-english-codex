@@ -161,7 +161,7 @@
       <h1 class="lesson-title">This, that, these, those</h1>
       <div class="tabs">
       <button class="tab-button active" data-tab="explanation">Explanation</button>
-      <button class="tab-button" data-tab="exercises">Exercises</button>
+      <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
       <h3>This/These (here)</h3>
@@ -178,7 +178,39 @@
       </div>
     </section>
       <section id="exercises" class="tab-content">
-        <p>Exercícios em breve.</p>
+        <h3>Demonstratives: this/that/these/those</h3>
+        <div class="example-container">
+          <p>1. <mark>This</mark> apple tastes sweet.</p>
+          <p>2. <mark>That</mark> mountain looks beautiful.</p>
+          <p>3. <mark>These</mark> oranges are juicy.</p>
+          <p>4. <mark>Those</mark> dogs are loud.</p>
+          <p>5. Is <mark>this</mark> your pen?</p>
+          <p>6. <mark>That</mark> isn't my car.</p>
+          <p>7. Are <mark>these</mark> seats free?</p>
+          <p>8. <mark>Those</mark> aren't our books.</p>
+          <p>9. <mark>This</mark> is my brother.</p>
+          <p>10. <mark>That</mark> was a great movie.</p>
+          <p>11. <mark>These</mark> flowers smell nice.</p>
+          <p>12. <mark>Those</mark> chairs look uncomfortable.</p>
+          <p>13. <mark>This</mark> isn't the right key.</p>
+          <p>14. <mark>That</mark> isn't very important.</p>
+          <p>15. <mark>These</mark> aren't new.</p>
+          <p>16. <mark>Those</mark> aren't from here.</p>
+          <p>17. Please read <mark>this</mark> note.</p>
+          <p>18. Throw away <mark>that</mark> paper.</p>
+          <p>19. I like <mark>these</mark> colours.</p>
+          <p>20. Can you see <mark>those</mark> stars?</p>
+          <p>21. <mark>This</mark> tastes amazing.</p>
+          <p>22. <mark>That</mark> looks dangerous.</p>
+          <p>23. <mark>These</mark> smell delicious.</p>
+          <p>24. <mark>Those</mark> sound strange.</p>
+          <p>25. <mark>This</mark> is for you.</p>
+          <p>26. <mark>That</mark> is for them.</p>
+          <p>27. <mark>These</mark> are mine.</p>
+          <p>28. <mark>Those</mark> are yours.</p>
+          <p>29. Who is <mark>this</mark> woman?</p>
+          <p>30. Do you know <mark>that</mark> man?</p>
+        </div>
       </section>
     </div>
   </main>
@@ -200,6 +232,25 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
+      });
+
+      // Adiciona botões de áudio para cada exemplo
+      document.querySelectorAll('#exercises .example-container p').forEach(p => {
+        const text = p.textContent.trim();
+        const cleanedText = text.replace(/^\d+\.\s*/, '');
+        const btn = document.createElement('button');
+        btn.textContent = '🔊';
+        btn.className = 'tts-btn';
+        btn.type = 'button';
+        btn.addEventListener('click', () => {
+          const utter = new SpeechSynthesisUtterance(cleanedText);
+          utter.lang = 'en-US';
+          utter.rate = 0.8;
+          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
+          if (voice) utter.voice = voice;
+          speechSynthesis.speak(utter);
+        });
+        p.appendChild(btn);
       });
     });
   </script>
