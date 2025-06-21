@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BR-English is a responsive site with grammar, vocabulary, listening and reading resources from levels A1 to B2." />
-  <title>A1 Grammar Lessons and Exercises</title>
+  <title>There or It</title>
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
@@ -40,7 +40,7 @@
               </a>
             </li>
             <li role="none">
-              <a role="menuitem" href="../a2-pre-intermediate/index.html">
+              <a role="menuitem" href="#">
                 <span class="level-circle level-b1">B1</span> Intermediate
               </a>
             </li>
@@ -158,46 +158,17 @@
 
   <main class="hero">
     <div class="content">
-      <h1>A1 Grammar Lessons and Exercises</h1>
-      <p>Blocos gramaticais essenciais do nível A1</p>
-      <ul class="lesson-links">
-        <li><a href="to-be.html">Present simple forms of “to be": am / is / are</a></li>
-        <li><a href="demonstratives.html">This, that, these, those</a></li>
-        <li><a href="possessives-and-pronouns.html">Possessive adjectives and subject pronouns (I/my, you/your, etc.)</a></li>
-        <li><a href="articles.html">A/an, plurals: singular and plural forms</a></li>
-        <li><a href="basic-adjectives.html">Adjectives: old, interesting, expensive, etc.</a></li>
-        <li><a href="present-simple.html">Present simple: I do, I don’t, Do I?</a></li>
-        <li><a href="wh-questions.html">Questions: word order and question words</a></li>
-        <li><a href="adverbs-of-frequency.html">Adverbs of frequency with present simple</a></li>
-        <li><a href="object-vs-subject-pronouns.html">Object pronouns vs. subject pronouns: me or I, she or her?</a></li>
-        <li><a href="whose-possessive-s.html">Whose, possessive ’s: Whose is this? It’s Mike’s</a></li>
-        <li><a href="prepositions-place-time.html">At, in, on: prepositions of time</a></li>
-        <li><a href="prepositions-place-time.html">At, in, on: prepositions of place</a></li>
-        <li><a href="can-cant.html">Can, can’t: ability, possibility, permission</a></li>
-        <li><a href="present-continuous-vs-simple.html">Present continuous: I’m doing, I’m not doing, Are you doing?</a></li>
-        <li><a href="present-continuous-vs-simple.html">Present simple or present continuous?</a></li>
-        <li><a href="imperative.html">The imperative: Sit down! Don’t talk!</a></li>
-        <li><a href="past-be-and-past-simple.html">Was / were: past simple of be</a></li>
-        <li><a href="past-be-and-past-simple.html">Past simple: regular / irregular verbs</a></li>
-        <li><a href="past-be-and-past-simple.html">Past simple: negatives and questions</a></li>
-        <li><a href="../a2-pre-intermediate/gerunds-and-infinitives.html">Verbs + to + infinitive and verbs + -ing</a></li>
-        <li><a href="would-you-like.html">Would you like…? I’d like…</a></li>
-        <li><a href="have-got.html">Have got</a></li>
-        <li><a href="some-any.html">A, some, any: countable and uncountable nouns</a></li>
-        <li><a href="there-is-there-are.html">There is, there are / there was, there were</a></li>
-        <li><a href="there-or-it.html">There or It</a></li>
-        <li><a href="prepositions-place-time.html">Next to, under, between, in front of, behind, over, etc.</a></li>
-        <li><a href="../a2-pre-intermediate/quantifiers-much-many-a-lot.html">Much, many, a lot of, a little, a few</a></li>
-        <li><a href="comparatives-and-superlatives.html">Comparative adjectives: older than, more important than, etc.</a></li>
-        <li><a href="comparatives-and-superlatives.html">Superlative adjectives: the oldest, the most important, etc.</a></li>
-        <li><a href="../a2-pre-intermediate/will-for-promises-predictions.html">Will and shall: future</a></li>
-        <li><a href="be-going-to.html">Be going to: plans and predictions</a></li>
-        <li><a href="../a2-pre-intermediate/adverbs-manner.html">Adverbs of manner (slowly) or adjectives (slow) ?</a></li>
-        <li><a href="articles.html">A/an, the, no article: the use of articles in English</a></li>
-        <li><a href="basic-conjunctions.html">Conjunctions: and, but, or, so, because</a></li>
-        <li><a href="basic-word-order.html">Basic word order in English</a></li>
-        <li><a href="demonstratives.html">The difference between “this” and “it”</a></li>
-      </ul>
+      <h1>There or It</h1>
+      <div class="tabs">
+      <button class="tab-button active" data-tab="explanation">Explanation</button>
+      <button class="tab-button" data-tab="exercises">Exercises</button>
+    </div>
+    <section id="explanation" class="tab-content active">
+      <p>Conteúdo em breve.
+    </section>
+      <section id="exercises" class="tab-content">
+        <p>Exercícios em breve.</p>
+      </section>
     </div>
   </main>
 
@@ -207,5 +178,19 @@
   </div>
 
   <script src="../../script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.tab-button');
+      const contents = document.querySelectorAll('.tab-content');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
