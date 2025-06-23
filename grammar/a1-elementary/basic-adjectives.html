@@ -164,64 +164,10 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <h3>Adjectives before a noun</h3>
-      <p>An adjective usually comes before a noun.</p>
-      <div class="example-container">
-        <p>This is a <span class="highlight">new</span> phone.<span class="correct"></span></p>
-        <p>She has a <span class="highlight">beautiful</span> dress.<span class="correct"></span></p>
-      </div>
-
-      <h3>Adjectives after <em>be</em></h3>
-      <p>We can put an adjective after the verb <em>be</em>.</p>
-      <div class="example-container">
-        <p>My car <span class="highlight">is old</span>.<span class="correct"></span></p>
-        <p>The weather <span class="highlight">is nice</span> today.<span class="correct"></span></p>
-      </div>
-
-      <h3>Adjectives don't change</h3>
-      <p>Adjectives are the same in singular and plural.</p>
-      <div class="example-container">
-        <p>It's an <span class="highlight">interesting</span> book.<span class="correct"></span></p>
-        <p>They are <span class="highlight">interesting</span> books.<span class="correct"></span></p>
-      </div>
-
-      <h3>Common adjectives</h3>
-      <p>Some common adjectives are: old, new, big, small, young, tall, short, good, bad, beautiful, ugly, interesting, boring, expensive, cheap, clean and dirty.</p>
+      <p>Conteúdo em breve.
     </section>
       <section id="exercises" class="tab-content">
-        <h3>Basic adjectives</h3>
-        <div class="example-container">
-          <p>1. This is an <mark>old</mark> car.</p>
-          <p>2. That's an <mark>expensive</mark> phone.</p>
-          <p>3. These books are <mark>interesting</mark>.</p>
-          <p>4. The movie was <mark>boring</mark>.</p>
-          <p>5. My house is <mark>big</mark>.</p>
-          <p>6. Her hair is <mark>short</mark>.</p>
-          <p>7. He is a <mark>good</mark> teacher.</p>
-          <p>8. She has a <mark>bad</mark> cold.</p>
-          <p>9. This room is <mark>small</mark>.</p>
-          <p>10. It's a <mark>new</mark> computer.</p>
-          <p>11. The soup smells <mark>delicious</mark>.</p>
-          <p>12. They have a <mark>beautiful</mark> garden.</p>
-          <p>13. Your idea is <mark>brilliant</mark>.</p>
-          <p>14. The test was <mark>difficult</mark>.</p>
-          <p>15. Those shoes look <mark>comfortable</mark>.</p>
-          <p>16. Today is a <mark>sunny</mark> day.</p>
-          <p>17. She wears a <mark>red</mark> dress.</p>
-          <p>18. The coffee is <mark>hot</mark>.</p>
-          <p>19. It's a <mark>cold</mark> winter.</p>
-          <p>20. This city is <mark>noisy</mark>.</p>
-          <p>21. The cookies taste <mark>sweet</mark>.</p>
-          <p>22. The lake is <mark>deep</mark>.</p>
-          <p>23. He has a <mark>funny</mark> story.</p>
-          <p>24. My bag is <mark>heavy</mark>.</p>
-          <p>25. Their cat is <mark>friendly</mark>.</p>
-          <p>26. The book is <mark>easy</mark>.</p>
-          <p>27. I'm <mark>tired</mark> after work.</p>
-          <p>28. The hotel is <mark>cheap</mark>.</p>
-          <p>29. It was an <mark>exciting</mark> game.</p>
-          <p>30. The student is <mark>clever</mark>.</p>
-        </div>
+        <p>Exercícios em breve.</p>
       </section>
     </div>
   </main>
@@ -243,25 +189,6 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
-      });
-
-      // Adiciona botões de áudio para cada exemplo
-      document.querySelectorAll('#exercises .example-container p').forEach(p => {
-        const text = p.textContent.trim();
-        const cleanedText = text.replace(/^\d+\.\s*/, '');
-        const btn = document.createElement('button');
-        btn.textContent = '🔊';
-        btn.className = 'tts-btn';
-        btn.type = 'button';
-        btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(cleanedText);
-          utter.lang = 'en-US';
-          utter.rate = 0.8;
-          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
-          if (voice) utter.voice = voice;
-          speechSynthesis.speak(utter);
-        });
-        p.appendChild(btn);
       });
     });
   </script>
