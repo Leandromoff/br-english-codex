@@ -164,10 +164,76 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <p>Conteúdo em breve.
+      <p>Os artigos em inglês indicam se falamos de algo geral ou específico. Veja quando usar <em>a</em>, <em>an</em>, <em>the</em> e quando nenhum artigo é necessário.</p>
+
+      <h3>1. A / An</h3>
+      <p>Usamos <strong>a</strong> ou <strong>an</strong> antes de substantivos contáveis no singular quando mencionamos algo pela primeira vez ou de forma genérica. <strong>A</strong> vem antes de som de consoante e <strong>an</strong> antes de som de vogal.</p>
+      <div class="forms-box">
+        <ul>
+          <li>a car</li>
+          <li>a university</li>
+          <li>an apple</li>
+          <li>an hour</li>
+        </ul>
+      </div>
+      <div class="example-container">
+        <p>She wants to buy <span class="highlight">a</span> bike.<span class="correct"></span></p>
+        <p>I live in <span class="highlight">an</span> apartment.<span class="correct"></span></p>
+      </div>
+
+      <h3>2. The</h3>
+      <p>Usamos <strong>the</strong> para substantivos específicos ou já mencionados. Também é usado com coisas únicas como the sun e the internet.</p>
+      <div class="example-container">
+        <p>I saw a car. <span class="highlight">The</span> car was red.<span class="correct"></span></p>
+        <p>Please close <span class="highlight">the</span> window.<span class="correct"></span></p>
+      </div>
+
+      <h3>3. Zero article</h3>
+      <p>Não usamos artigo em alguns casos: antes de substantivos no plural falando de forma geral, nomes próprios, substantivos incontáveis e conceitos abstratos.</p>
+      <div class="example-container">
+        <p><span class="highlight">Teachers</span> work very hard.<span class="correct"></span></p>
+        <p><span class="highlight">Happiness</span> is important.<span class="correct"></span></p>
+      </div>
+
+      <div class="note-box">
+        <h4>Dica</h4>
+        <p>Alguns nomes de lugares não usam artigo (Brazil, London), mas outros sim (the USA, the Amazon).</p>
+      </div>
     </section>
       <section id="exercises" class="tab-content">
-        <p>Exercícios em breve.</p>
+        <h3>Articles: a/an, the, no article</h3>
+        <div class="example-container">
+          <p>1. I bought <mark>a</mark> car yesterday.</p>
+          <p>2. She wants to eat <mark>an</mark> apple.</p>
+          <p>3. <mark>The</mark> book on the table is mine.</p>
+          <p>4. He has <mark>a</mark> house in the city.</p>
+          <p>5. We visited <mark>the</mark> museum last weekend.</p>
+          <p>6. <mark>Teachers</mark> often work very hard.</p>
+          <p>7. <mark>The</mark> sun is shining today.</p>
+          <p>8. I'm looking for <mark>an</mark> apartment.</p>
+          <p>9. Could you pass me <mark>the</mark> salt, please?</p>
+          <p>10. <mark>Water</mark> is essential for life.</p>
+          <p>11. She adopted <mark>a</mark> cat from the shelter.</p>
+          <p>12. Let's meet at <mark>the</mark> park.</p>
+          <p>13. <mark>Love</mark> is important.</p>
+          <p>14. He drives <mark>a</mark> truck.</p>
+          <p>15. Can you see <mark>the</mark> moon?</p>
+          <p>16. <mark>Dogs</mark> are loyal animals.</p>
+          <p>17. She bought <mark>an</mark> umbrella.</p>
+          <p>18. I live near <mark>the</mark> beach.</p>
+          <p>19. <mark>Music</mark> makes me happy.</p>
+          <p>20. He's reading <mark>a</mark> new book.</p>
+          <p>21. <mark>The</mark> students in this class are great.</p>
+          <p>22. I like <mark>the</mark> colour of your hair.</p>
+          <p>23. <mark>Coffee</mark> keeps me awake.</p>
+          <p>24. She ordered <mark>a</mark> sandwich.</p>
+          <p>25. They opened <mark>the</mark> door slowly.</p>
+          <p>26. <mark>Children</mark> need sleep.</p>
+          <p>27. We saw <mark>an</mark> eagle in the sky.</p>
+          <p>28. <mark>The</mark> train leaves at 9 o'clock.</p>
+          <p>29. <mark>Nature</mark> is beautiful.</p>
+          <p>30. I heard <mark>an</mark> interesting story.</p>
+        </div>
       </section>
     </div>
   </main>
@@ -189,6 +255,25 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
+      });
+
+      // Adiciona botões de áudio para cada exemplo
+      document.querySelectorAll('#exercises .example-container p').forEach(p => {
+        const text = p.textContent.trim();
+        const cleanedText = text.replace(/^\d+\.\s*/, '');
+        const btn = document.createElement('button');
+        btn.textContent = '🔊';
+        btn.className = 'tts-btn';
+        btn.type = 'button';
+        btn.addEventListener('click', () => {
+          const utter = new SpeechSynthesisUtterance(cleanedText);
+          utter.lang = 'en-US';
+          utter.rate = 0.8;
+          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
+          if (voice) utter.voice = voice;
+          speechSynthesis.speak(utter);
+        });
+        p.appendChild(btn);
       });
     });
   </script>
