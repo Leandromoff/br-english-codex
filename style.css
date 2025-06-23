@@ -317,7 +317,7 @@ footer {
   margin-top: 24px;
   margin-bottom: 8px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.6rem;
 }
 .forms-box {
   background: #222;
@@ -333,7 +333,7 @@ footer {
 .section-subtitle {
   color: #00bcd4;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.6rem;
   margin-top: 24px;
   margin-bottom: 8px;
   text-align: left;
@@ -373,7 +373,7 @@ footer {
   color: #00bcd4;
   margin-top: 0;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.6rem;
 }
 
 /* Botão de reprodução de áudio nos exemplos */
@@ -388,7 +388,7 @@ footer {
 
 /* ==== LESSON TITLE ==== */
 .lesson-title {
-  font-size: 1rem; /* Same as the logo text */
+  font-size: 0.6rem; /* Reduced by 40% */
   font-weight: 700;
   text-align: center;
 }
