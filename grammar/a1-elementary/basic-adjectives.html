@@ -164,82 +164,10 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <p>Adjectives describe people, places and things. In English they usually
-        come <em>before</em> the noun or after the verb <em>be</em>.</p>
-
-      <h3>1. Adjective + noun</h3>
-      <p>The adjective goes before the noun it describes.</p>
-      <div class="example-container">
-        <p>a <span class="highlight">big</span> car<span class="correct"></span></p>
-        <p>an <span class="highlight">interesting</span> book<span class="correct"></span></p>
-      </div>
-
-      <h3>2. Be + adjective</h3>
-      <p>We often use adjectives after <em>be</em>.</p>
-      <div class="example-container">
-        <p>The car <span class="highlight">is big</span>.<span class="correct"></span></p>
-        <p>Her book <span class="highlight">is interesting</span>.<span class="correct"></span></p>
-      </div>
-
-      <h3>3. Common adjectives and opposites</h3>
-      <table class="simple-table">
-        <thead>
-          <tr>
-            <th>Adjective</th>
-            <th>Opposite</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>old</td><td>new</td></tr>
-          <tr><td>big</td><td>small</td></tr>
-          <tr><td>cheap</td><td>expensive</td></tr>
-          <tr><td>easy</td><td>difficult</td></tr>
-          <tr><td>interesting</td><td>boring</td></tr>
-        </tbody>
-      </table>
-
-      <h3>4. Nationality adjectives</h3>
-      <p>Adjectives of nationality begin with a capital letter.</p>
-      <div class="example-container">
-        <p>She is <span class="highlight">Brazilian</span>.<span class="correct"></span></p>
-        <p>They are <span class="highlight">Italian</span>.<span class="correct"></span></p>
-      </div>
+      <p>Conteúdo em breve.
     </section>
-
       <section id="exercises" class="tab-content">
-        <h3>Adjectives in sentences</h3>
-        <div class="example-container">
-          <p>1. This is an <mark>old</mark> house.</p>
-          <p>2. That car is <mark>new</mark>.</p>
-          <p>3. It is a <mark>small</mark> town.</p>
-          <p>4. Her bag is <mark>expensive</mark>.</p>
-          <p>5. This question is <mark>easy</mark>.</p>
-          <p>6. His story is <mark>interesting</mark>.</p>
-          <p>7. The movie was <mark>boring</mark>.</p>
-          <p>8. My friends are <mark>Brazilian</mark>.</p>
-          <p>9. She has a <mark>big</mark> dog.</p>
-          <p>10. The exam was <mark>difficult</mark>.</p>
-          <p>11. Your phone is <mark>cheap</mark>.</p>
-          <p>12. Their apartment is <mark>small</mark>.</p>
-          <p>13. London is a <mark>large</mark> city.</p>
-          <p>14. The meal was <mark>delicious</mark>.</p>
-          <p>15. This book is <mark>funny</mark>.</p>
-          <p>16. Our teacher is <mark>young</mark>.</p>
-          <p>17. My coffee is <mark>cold</mark>.</p>
-          <p>18. The soup is <mark>hot</mark>.</p>
-          <p>19. Their house is <mark>beautiful</mark>.</p>
-          <p>20. She wears <mark>expensive</mark> clothes.</p>
-          <p>21. He is <mark>tall</mark> and strong.</p>
-          <p>22. The cat is <mark>black</mark>.</p>
-          <p>23. It was a <mark>long</mark> day.</p>
-          <p>24. My bag is <mark>heavy</mark>.</p>
-          <p>25. Your idea is <mark>brilliant</mark>.</p>
-          <p>26. This beach is <mark>clean</mark>.</p>
-          <p>27. The water is <mark>cold</mark> today.</p>
-          <p>28. I like <mark>short</mark> stories.</p>
-          <p>29. Their garden is <mark>green</mark> and <mark>beautiful</mark>.</p>
-          <p>30. Our teacher is <mark>strict</mark>.</p>
-        </div>
+        <p>Exercícios em breve.</p>
       </section>
     </div>
   </main>
@@ -261,25 +189,6 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
-      });
-
-      // Add audio buttons for each example
-      document.querySelectorAll('#exercises .example-container p').forEach(p => {
-        const text = p.textContent.trim();
-        const cleanedText = text.replace(/^\d+\.\s*/, '');
-        const btn = document.createElement('button');
-        btn.textContent = '🔊';
-        btn.className = 'tts-btn';
-        btn.type = 'button';
-        btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(cleanedText);
-          utter.lang = 'en-US';
-          utter.rate = 0.8;
-          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
-          if (voice) utter.voice = voice;
-          speechSynthesis.speak(utter);
-        });
-        p.appendChild(btn);
       });
     });
   </script>
