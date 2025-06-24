@@ -28,18 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
     hamb.classList.toggle('open');
   });
 
-  // Module toggle buttons
-  const moduleToggles = document.querySelectorAll('.module-toggle');
-  moduleToggles.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const content = document.getElementById(targetId);
-      if (!content) return;
-      content.classList.toggle('hidden');
-      const hidden = content.classList.contains('hidden');
-      btn.setAttribute('aria-expanded', String(!hidden));
-      btn.textContent = hidden ? 'Mostrar conteúdo' : 'Esconder conteúdo';
-    });
-  });
-
 });

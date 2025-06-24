@@ -392,27 +392,3 @@ footer {
   font-weight: 700;
   text-align: center;
 }
-
-/* ==== MODULES ==== */
-.module {
-  margin-top: 32px;
-}
-.module-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.module-toggle {
-  background: none;
-  border: 1px solid #3478f6;
-  color: #3478f6;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.module-content {
-  margin-top: 16px;
-}
-.hidden {
-  display: none;
-}
