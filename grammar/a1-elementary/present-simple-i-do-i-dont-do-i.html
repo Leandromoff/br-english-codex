@@ -164,10 +164,66 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <p>Conteúdo em breve.
+      <h3>Visão Geral</h3>
+      <p>O presente simples é usado para fatos habituais e verdades gerais. Para formar perguntas e negativas com a maioria dos verbos, utilizamos <em>do</em> ou <em>does</em>.</p>
+
+      <h3>Form</h3>
+      <table class="simple-table">
+        <thead>
+          <tr>
+            <th>Afirmativa</th>
+            <th>Negativa</th>
+            <th>Interrogativa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>I/You/We/They <strong>work</strong></td>
+            <td>I/You/We/They <strong>do not</strong> work</td>
+            <td><strong>Do</strong> I/you/we/they work?</td>
+          </tr>
+          <tr>
+            <td>He/She/It <strong>works</strong></td>
+            <td>He/She/It <strong>does not</strong> work</td>
+            <td><strong>Does</strong> he/she/it work?</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
       <section id="exercises" class="tab-content">
-        <p>Exercícios em breve.</p>
+        <h3>Present simple practice</h3>
+        <div class="example-container">
+          <p>1. I <mark>like</mark> coffee.</p>
+          <p>2. She <mark>doesn't like</mark> tea.</p>
+          <p>3. <mark>Do</mark> you play tennis?</p>
+          <p>4. He <mark>works</mark> every day.</p>
+          <p>5. They <mark>don't live</mark> here.</p>
+          <p>6. <mark>Does</mark> she study French?</p>
+          <p>7. We <mark>go</mark> to school by bus.</p>
+          <p>8. I <mark>don't watch</mark> TV.</p>
+          <p>9. <mark>Do</mark> they know your name?</p>
+          <p>10. He <mark>doesn't work</mark> on Sundays.</p>
+          <p>11. She <mark>plays</mark> the guitar.</p>
+          <p>12. <mark>Do</mark> you read books?</p>
+          <p>13. I <mark>study</mark> every night.</p>
+          <p>14. They <mark>don't eat</mark> meat.</p>
+          <p>15. <mark>Does</mark> he like soccer?</p>
+          <p>16. We <mark>start</mark> work at nine.</p>
+          <p>17. She <mark>doesn't drive</mark>.</p>
+          <p>18. <mark>Do</mark> I need a ticket?</p>
+          <p>19. He <mark>visits</mark> his parents often.</p>
+          <p>20. They <mark>don't speak</mark> Italian.</p>
+          <p>21. <mark>Does</mark> it rain here a lot?</p>
+          <p>22. You <mark>work</mark> very hard.</p>
+          <p>23. She <mark>goes</mark> to the gym.</p>
+          <p>24. <mark>Do</mark> we need passports?</p>
+          <p>25. He <mark>doesn't understand</mark>.</p>
+          <p>26. I <mark>drink</mark> water every day.</p>
+          <p>27. They <mark>study</mark> English.</p>
+          <p>28. She <mark>doesn't work</mark> here.</p>
+          <p>29. <mark>Do</mark> you like music?</p>
+          <p>30. We <mark>don't have</mark> a car.</p>
+        </div>
       </section>
     </div>
   </main>
@@ -189,6 +245,26 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
+      });
+      });
+
+      // Adiciona botões de áudio para cada exemplo
+      document.querySelectorAll('#exercises .example-container p').forEach(p => {
+        const text = p.textContent.trim();
+        const cleanedText = text.replace(/^\d+\.\s*/, '');
+        const btn = document.createElement('button');
+        btn.textContent = '🔊';
+        btn.className = 'tts-btn';
+        btn.type = 'button';
+        btn.addEventListener('click', () => {
+          const utter = new SpeechSynthesisUtterance(cleanedText);
+          utter.lang = 'en-US';
+          utter.rate = 0.8;
+          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
+          if (voice) utter.voice = voice;
+          speechSynthesis.speak(utter);
+        });
+        p.appendChild(btn);
       });
     });
   </script>

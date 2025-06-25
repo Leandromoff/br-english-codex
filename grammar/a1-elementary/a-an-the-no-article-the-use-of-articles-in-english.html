@@ -164,10 +164,64 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <p>Conteúdo em breve.
+      <h3>Visão Geral</h3>
+      <p>Em inglês usamos <em>a</em>/<em>an</em> para coisas em geral ou quando mencionamos algo pela primeira vez. Usamos <em>the</em> para coisas específicas ou que já foram mencionadas. Em alguns casos não usamos artigo.</p>
+
+      <h3>A / An</h3>
+      <p>Empregamos <strong>a</strong> antes de palavras que começam com som de consoante e <strong>an</strong> antes de palavras que começam com som de vogal.</p>
+      <div class="example-container">
+        <p>I have <span class="highlight">a</span> cat.<span class="correct"></span></p>
+        <p>She is <span class="highlight">an</span> engineer.<span class="correct"></span></p>
+      </div>
+
+      <h3>The</h3>
+      <p>Usamos <strong>the</strong> quando o ouvinte/leitor sabe exatamente de que coisa estamos falando.</p>
+      <div class="example-container">
+        <p>Close <span class="highlight">the</span> door, please.<span class="correct"></span></p>
+        <p>I liked <span class="highlight">the</span> movie we saw yesterday.<span class="correct"></span></p>
+      </div>
+
+      <h3>No article</h3>
+      <p>Não usamos artigo com nomes próprios, idiomas, refeições ou quando falamos de coisas em geral.</p>
+      <div class="example-container">
+        <p><span class="highlight">Breakfast</span> is ready.<span class="correct"></span></p>
+        <p><span class="highlight">English</span> is difficult for some people.<span class="correct"></span></p>
+      </div>
     </section>
       <section id="exercises" class="tab-content">
-        <p>Exercícios em breve.</p>
+        <h3>Articles in context</h3>
+        <div class="example-container">
+          <p>1. I saw <mark>a</mark> bird outside.</p>
+          <p>2. She wants to buy <mark>an</mark> umbrella.</p>
+          <p>3. Please pass me <mark>the</mark> salt.</p>
+          <p>4. <mark>The</mark> sun is shining today.</p>
+          <p>5. He doesn't eat <mark>breakfast</mark> early.</p>
+          <p>6. <mark>English</mark> is spoken here.</p>
+          <p>7. We live near <mark>the</mark> beach.</p>
+          <p>8. I have <mark>a</mark> new phone.</p>
+          <p>9. She goes to <mark>the</mark> gym on Mondays.</p>
+          <p>10. Do you like <mark>coffee</mark>?</p>
+          <p>11. They visited <mark>the</mark> museum yesterday.</p>
+          <p>12. He is reading <mark>a</mark> magazine.</p>
+          <p>13. Where is <mark>the</mark> station?</p>
+          <p>14. She studies <mark>French</mark> at school.</p>
+          <p>15. Let's watch <mark>a</mark> movie.</p>
+          <p>16. I put <mark>the</mark> keys on the table.</p>
+          <p>17. <mark>Lunch</mark> is at noon.</p>
+          <p>18. <mark>The</mark> children are playing outside.</p>
+          <p>19. He wants to buy <mark>a</mark> house.</p>
+          <p>20. She opened <mark>the</mark> window.</p>
+          <p>21. <mark>Water</mark> boils at 100°C.</p>
+          <p>22. They rode <mark>the</mark> bus to work.</p>
+          <p>23. I need <mark>a</mark> pen.</p>
+          <p>24. <mark>The</mark> flowers are beautiful.</p>
+          <p>25. He speaks <mark>Spanish</mark> fluently.</p>
+          <p>26. She wore <mark>a</mark> red dress.</p>
+          <p>27. We saw <mark>the</mark> Eiffel Tower.</p>
+          <p>28. <mark>Dinner</mark> was delicious.</p>
+          <p>29. Do you have <mark>a</mark> minute?</p>
+          <p>30. I cleaned <mark>the</mark> kitchen.</p>
+        </div>
       </section>
     </div>
   </main>
@@ -189,6 +243,26 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
+      });
+      });
+
+      // Adiciona botões de áudio para cada exemplo
+      document.querySelectorAll('#exercises .example-container p').forEach(p => {
+        const text = p.textContent.trim();
+        const cleanedText = text.replace(/^\d+\.\s*/, '');
+        const btn = document.createElement('button');
+        btn.textContent = '🔊';
+        btn.className = 'tts-btn';
+        btn.type = 'button';
+        btn.addEventListener('click', () => {
+          const utter = new SpeechSynthesisUtterance(cleanedText);
+          utter.lang = 'en-US';
+          utter.rate = 0.8;
+          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
+          if (voice) utter.voice = voice;
+          speechSynthesis.speak(utter);
+        });
+        p.appendChild(btn);
       });
     });
   </script>

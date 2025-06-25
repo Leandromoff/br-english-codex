@@ -164,10 +164,65 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <p>Conteúdo em breve.
+      <h3>Visão Geral</h3>
+      <p>Os advérbios de frequência indicam com que regularidade algo acontece. No presente simples, eles costumam aparecer antes do verbo principal ou após o verbo <em>be</em>.</p>
+
+      <h3>Posição dos advérbios</h3>
+      <p>Com o verbo <em>be</em>, o advérbio vem depois. Com outros verbos, colocamos o advérbio antes do verbo principal.</p>
+      <div class="example-container">
+        <p>She <span class="highlight">is usually</span> at home.<span class="correct"></span></p>
+        <p>They <span class="highlight">often play</span> soccer.<span class="correct"></span></p>
+      </div>
+
+      <h3>Principais advérbios</h3>
+      <table class="simple-table">
+        <thead>
+          <tr><th>Advérbio</th><th>Frequência aproximada</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>always</td><td>100%</td></tr>
+          <tr><td>usually</td><td>80%</td></tr>
+          <tr><td>often</td><td>60%</td></tr>
+          <tr><td>sometimes</td><td>40%</td></tr>
+          <tr><td>rarely</td><td>20%</td></tr>
+          <tr><td>never</td><td>0%</td></tr>
+        </tbody>
+      </table>
     </section>
       <section id="exercises" class="tab-content">
-        <p>Exercícios em breve.</p>
+        <h3>Adverbs of frequency</h3>
+        <div class="example-container">
+          <p>1. I <mark>always</mark> get up early.</p>
+          <p>2. She is <mark>never</mark> late.</p>
+          <p>3. They <mark>often</mark> watch movies.</p>
+          <p>4. He <mark>usually</mark> walks to work.</p>
+          <p>5. We <mark>sometimes</mark> eat out.</p>
+          <p>6. It is <mark>rarely</mark> cold here.</p>
+          <p>7. Do you <mark>often</mark> travel?</p>
+          <p>8. She <mark>always</mark> helps me.</p>
+          <p>9. They are <mark>sometimes</mark> busy.</p>
+          <p>10. He <mark>never</mark> drinks coffee.</p>
+          <p>11. I <mark>usually</mark> read at night.</p>
+          <p>12. We <mark>often</mark> go to the park.</p>
+          <p>13. She is <mark>always</mark> happy.</p>
+          <p>14. They <mark>rarely</mark> cook.</p>
+          <p>15. He <mark>sometimes</mark> plays video games.</p>
+          <p>16. Do you <mark>always</mark> wear a hat?</p>
+          <p>17. The train is <mark>usually</mark> on time.</p>
+          <p>18. I <mark>never</mark> eat meat.</p>
+          <p>19. She <mark>often</mark> reads magazines.</p>
+          <p>20. We are <mark>rarely</mark> tired.</p>
+          <p>21. He <mark>always</mark> arrives early.</p>
+          <p>22. They <mark>sometimes</mark> study together.</p>
+          <p>23. Do you <mark>usually</mark> drive to work?</p>
+          <p>24. She is <mark>never</mark> angry.</p>
+          <p>25. I <mark>often</mark> listen to music.</p>
+          <p>26. He <mark>rarely</mark> watches TV.</p>
+          <p>27. They <mark>always</mark> clean the house.</p>
+          <p>28. We <mark>sometimes</mark> go hiking.</p>
+          <p>29. She <mark>usually</mark> cooks dinner.</p>
+          <p>30. He is <mark>never</mark> bored.</p>
+        </div>
       </section>
     </div>
   </main>
@@ -189,6 +244,26 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
+      });
+      });
+
+      // Adiciona botões de áudio para cada exemplo
+      document.querySelectorAll('#exercises .example-container p').forEach(p => {
+        const text = p.textContent.trim();
+        const cleanedText = text.replace(/^\d+\.\s*/, '');
+        const btn = document.createElement('button');
+        btn.textContent = '🔊';
+        btn.className = 'tts-btn';
+        btn.type = 'button';
+        btn.addEventListener('click', () => {
+          const utter = new SpeechSynthesisUtterance(cleanedText);
+          utter.lang = 'en-US';
+          utter.rate = 0.8;
+          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
+          if (voice) utter.voice = voice;
+          speechSynthesis.speak(utter);
+        });
+        p.appendChild(btn);
       });
     });
   </script>
