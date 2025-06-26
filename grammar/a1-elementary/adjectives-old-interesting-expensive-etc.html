@@ -164,57 +164,10 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <h3>Visão Geral</h3>
-      <p>Os adjetivos em inglês são invariáveis: não mudam em número ou gênero. Eles podem vir antes do substantivo ou depois do verbo <em>be</em> e de verbos de ligação como <em>feel</em> ou <em>seem</em>.</p>
-
-      <h3>Antes do substantivo</h3>
-      <p>É muito comum posicionar o adjetivo antes do substantivo que ele descreve.</p>
-      <div class="example-container">
-        <p>It is an <span class="highlight">old</span> house.<span class="correct"></span></p>
-        <p>They have a <span class="highlight">beautiful</span> garden.<span class="correct"></span></p>
-      </div>
-
-      <h3>Depois de verbos como be, feel, seem</h3>
-      <p>Quando usamos verbos de ligação, o adjetivo aparece após o verbo.</p>
-      <div class="example-container">
-        <p>She <span class="highlight">is</span> happy.<span class="correct"></span></p>
-        <p>I <span class="highlight">feel</span> tired.<span class="correct"></span></p>
-      </div>
+      <p>Conteúdo em breve.
     </section>
       <section id="exercises" class="tab-content">
-        <h3>Using adjectives</h3>
-        <div class="example-container">
-          <p>1. He has an <mark>old</mark> car.</p>
-          <p>2. This coffee tastes <mark>strong</mark>.</p>
-          <p>3. They live in a <mark>small</mark> town.</p>
-          <p>4. The exam was <mark>difficult</mark>.</p>
-          <p>5. She is very <mark>kind</mark>.</p>
-          <p>6. We bought a <mark>new</mark> computer.</p>
-          <p>7. My bag is <mark>heavy</mark>.</p>
-          <p>8. It seems <mark>easy</mark> to me.</p>
-          <p>9. He is a <mark>good</mark> friend.</p>
-          <p>10. They are <mark>tired</mark> today.</p>
-          <p>11. That was an <mark>interesting</mark> book.</p>
-          <p>12. She wears <mark>expensive</mark> clothes.</p>
-          <p>13. The soup smells <mark>delicious</mark>.</p>
-          <p>14. This exercise is <mark>simple</mark>.</p>
-          <p>15. I like your <mark>new</mark> haircut.</p>
-          <p>16. He gave me a <mark>cheap</mark> watch.</p>
-          <p>17. My parents are <mark>strict</mark>.</p>
-          <p>18. She looks <mark>worried</mark>.</p>
-          <p>19. It's a <mark>cold</mark> morning.</p>
-          <p>20. We had a <mark>fantastic</mark> time.</p>
-          <p>21. This chair is <mark>comfortable</mark>.</p>
-          <p>22. He told a <mark>funny</mark> story.</p>
-          <p>23. The movie was <mark>boring</mark>.</p>
-          <p>24. I am <mark>busy</mark> right now.</p>
-          <p>25. She has <mark>long</mark> hair.</p>
-          <p>26. It was a <mark>hard</mark> decision.</p>
-          <p>27. He owns a <mark>large</mark> company.</p>
-          <p>28. That sounds <mark>strange</mark>.</p>
-          <p>29. What a <mark>beautiful</mark> day!</p>
-          <p>30. The task is <mark>important</mark>.</p>
-        </div>
+        <p>Exercícios em breve.</p>
       </section>
     </div>
   </main>
@@ -236,26 +189,6 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
-      });
-      });
-
-      // Adiciona botões de áudio para cada exemplo
-      document.querySelectorAll('#exercises .example-container p').forEach(p => {
-        const text = p.textContent.trim();
-        const cleanedText = text.replace(/^\d+\.\s*/, '');
-        const btn = document.createElement('button');
-        btn.textContent = '🔊';
-        btn.className = 'tts-btn';
-        btn.type = 'button';
-        btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(cleanedText);
-          utter.lang = 'en-US';
-          utter.rate = 0.8;
-          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
-          if (voice) utter.voice = voice;
-          speechSynthesis.speak(utter);
-        });
-        p.appendChild(btn);
       });
     });
   </script>
