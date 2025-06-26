@@ -164,57 +164,10 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <h3>Visão Geral</h3>
-      <p>As perguntas em inglês costumam seguir a ordem auxiliar + sujeito + verbo principal. Quando usamos <em>question words</em> (what, where, when, etc.), elas aparecem no início da pergunta.</p>
-
-      <h3>Yes/No questions</h3>
-      <p>Nesse tipo de pergunta, usamos somente o auxiliar antes do sujeito.</p>
-      <div class="example-container">
-        <p><span class="highlight">Do</span> you like pizza?<span class="correct"></span></p>
-        <p><span class="highlight">Is</span> she at home?<span class="correct"></span></p>
-      </div>
-
-      <h3>Wh- questions</h3>
-      <p>Quando adicionamos palavras interrogativas, elas vêm antes do auxiliar.</p>
-      <div class="example-container">
-        <p><span class="highlight">Where</span> do you live?<span class="correct"></span></p>
-        <p><span class="highlight">When</span> does the film start?<span class="correct"></span></p>
-      </div>
+      <p>Conteúdo em breve.
     </section>
       <section id="exercises" class="tab-content">
-        <h3>Question practice</h3>
-        <div class="example-container">
-          <p>1. <mark>Do</mark> you work here?</p>
-          <p>2. <mark>Where</mark> do they live?</p>
-          <p>3. <mark>Is</mark> he your brother?</p>
-          <p>4. <mark>When</mark> does class begin?</p>
-          <p>5. <mark>Does</mark> she like ice cream?</p>
-          <p>6. <mark>What</mark> do you need?</p>
-          <p>7. <mark>Are</mark> we late?</p>
-          <p>8. <mark>How</mark> do you spell that?</p>
-          <p>9. <mark>Does</mark> it rain a lot?</p>
-          <p>10. <mark>Who</mark> is your teacher?</p>
-          <p>11. <mark>Do</mark> they know the answer?</p>
-          <p>12. <mark>Why</mark> are you sad?</p>
-          <p>13. <mark>Is</mark> this your pen?</p>
-          <p>14. <mark>Where</mark> is the station?</p>
-          <p>15. <mark>Do</mark> we need tickets?</p>
-          <p>16. <mark>What</mark> does he want?</p>
-          <p>17. <mark>Are</mark> you free tomorrow?</p>
-          <p>18. <mark>When</mark> do you get up?</p>
-          <p>19. <mark>Does</mark> she have siblings?</p>
-          <p>20. <mark>How</mark> old is he?</p>
-          <p>21. <mark>Do</mark> I look okay?</p>
-          <p>22. <mark>Where</mark> are my keys?</p>
-          <p>23. <mark>Is</mark> it far from here?</p>
-          <p>24. <mark>What</mark> time is it?</p>
-          <p>25. <mark>Do</mark> you need help?</p>
-          <p>26. <mark>Who</mark> lives there?</p>
-          <p>27. <mark>Are</mark> they students?</p>
-          <p>28. <mark>Why</mark> does he study English?</p>
-          <p>29. <mark>Does</mark> the shop open early?</p>
-          <p>30. <mark>When</mark> is your birthday?</p>
-        </div>
+        <p>Exercícios em breve.</p>
       </section>
     </div>
   </main>
@@ -236,26 +189,6 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
-      });
-      });
-
-      // Adiciona botões de áudio para cada exemplo
-      document.querySelectorAll('#exercises .example-container p').forEach(p => {
-        const text = p.textContent.trim();
-        const cleanedText = text.replace(/^\d+\.\s*/, '');
-        const btn = document.createElement('button');
-        btn.textContent = '🔊';
-        btn.className = 'tts-btn';
-        btn.type = 'button';
-        btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(cleanedText);
-          utter.lang = 'en-US';
-          utter.rate = 0.8;
-          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
-          if (voice) utter.voice = voice;
-          speechSynthesis.speak(utter);
-        });
-        p.appendChild(btn);
       });
     });
   </script>
