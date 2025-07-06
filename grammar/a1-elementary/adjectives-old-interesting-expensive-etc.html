@@ -164,104 +164,10 @@
       <button class="tab-button" data-tab="exercises">Examples</button>
     </div>
     <section id="explanation" class="tab-content active">
-      <h3>Visão Geral</h3>
-      <p>Em inglês, o adjetivo costuma vir antes do substantivo. Após verbos de ligação como <em>be</em> ou verbos de percepção (look, feel, etc.), ele aparece depois do verbo. Adjetivos não têm forma plural e podem ser intensificados com <em>very</em> ou <em>quite</em>.</p>
-
-      <h3>Form</h3>
-      <table class="simple-table">
-        <thead>
-          <tr>
-            <th>Estrutura</th>
-            <th>Exemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>adjective + noun</td>
-            <td>a small car</td>
-          </tr>
-          <tr>
-            <td>be + adjective</td>
-            <td>The food is good.</td>
-          </tr>
-          <tr>
-            <td>sense verb + adjective</td>
-            <td>It looks old.</td>
-          </tr>
-          <tr>
-            <td>no plural</td>
-            <td>two small cars</td>
-          </tr>
-          <tr>
-            <td>very/quite + adjective</td>
-            <td>very big</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>Adjective + noun</h3>
-      <p>O adjetivo normalmente aparece antes do substantivo que descreve.</p>
-      <div class="example-container">
-        <p>Alice comprou um <span class="highlight">new phone</span>.<span class="correct"></span></p>
-        <p>Bruno dirige um <span class="highlight">old car</span>.<span class="correct"></span></p>
-        <p>Nós vimos uma <span class="highlight">beautiful beach</span>.<span class="correct"></span></p>
-        <p>Eles moram em uma <span class="highlight">big house</span>.<span class="correct"></span></p>
-      </div>
-
-      <h3>Be + adjective</h3>
-      <p>Usamos o adjetivo após o verbo <em>be</em> para descrever o sujeito.</p>
-      <div class="example-container">
-        <p>Alice <span class="highlight">is happy</span> today.<span class="correct"></span></p>
-        <p>The streets <span class="highlight">are quiet</span>.<span class="correct"></span></p>
-        <p>This book <span class="highlight">is interesting</span>.<span class="correct"></span></p>
-        <p>Bruno and Carla <span class="highlight">are tired</span>.<span class="correct"></span></p>
-      </div>
-
-      <h3>Sense verbs + adjective</h3>
-      <p>Depois de verbos de percepção como <em>look</em>, <em>feel</em>, <em>sound</em>, <em>smell</em> ou <em>taste</em>, usamos o adjetivo após o verbo.</p>
-      <div class="example-container">
-        <p>The soup <span class="highlight">tastes delicious</span>.<span class="correct"></span></p>
-        <p>You <span class="highlight">look tired</span>.<span class="correct"></span></p>
-        <p>This perfume <span class="highlight">smells nice</span>.<span class="correct"></span></p>
-        <p>Their plan <span class="highlight">sounds easy</span>.<span class="correct"></span></p>
-      </div>
-
-      <h3>No plural</h3>
-      <p>Os adjetivos não mudam no plural.</p>
-      <div class="example-container">
-        <p>Ela tem um <span class="highlight">red dress</span>.<span class="correct"></span></p>
-        <p>Ela tem dois <span class="highlight">red dresses</span>.<span class="correct"></span></p>
-        <p>Este <span class="highlight">short story</span> é divertido.<span class="correct"></span></p>
-        <p>Aquelas <span class="highlight">short stories</span> são divertidas.<span class="correct"></span></p>
-      </div>
-
-      <h3>Very/quite + adjective</h3>
-      <p>Podemos intensificar o significado do adjetivo com <em>very</em> ou <em>quite</em>.</p>
-      <div class="example-container">
-        <p>It is <span class="highlight">very cold</span> today.<span class="correct"></span></p>
-        <p>Alice is <span class="highlight">quite tall</span>.<span class="correct"></span></p>
-        <p>Bruno is <span class="highlight">very friendly</span>.<span class="correct"></span></p>
-        <p>The movie was <span class="highlight">quite long</span>.<span class="correct"></span></p>
-      </div>
+      <p>Conteúdo em breve.
     </section>
       <section id="exercises" class="tab-content">
-        <div class="example-container">
-          <p>1. She bought a <mark>beautiful</mark> dress.</p>
-          <p>2. The kids are <mark>very</mark> noisy.</p>
-          <p>3. This cake tastes <mark>sweet</mark>.</p>
-          <p>4. Bruno has a <mark>new</mark> job.</p>
-          <p>5. Alice is <mark>quite</mark> busy today.</p>
-          <p>6. Those flowers look <mark>amazing</mark>.</p>
-          <p>7. I have two <mark>small</mark> cats.</p>
-          <p>8. The room feels <mark>cold</mark>.</p>
-          <p>9. He drives a <mark>very</mark> fast car.</p>
-          <p>10. Your idea sounds <mark>interesting</mark>.</p>
-          <p>11. We live in a <mark>quiet</mark> neighborhood.</p>
-          <p>12. The tea is <mark>quite</mark> hot.</p>
-          <p>13. They have an <mark>expensive</mark> house.</p>
-          <p>14. My friends are <mark>very</mark> kind.</p>
-          <p>15. This perfume smells <mark>wonderful</mark>.</p>
-        </div>
+        <p>Exercícios em breve.</p>
       </section>
     </div>
   </main>
@@ -283,25 +189,6 @@
           btn.classList.add('active');
           document.getElementById(btn.dataset.tab).classList.add('active');
         });
-      });
-
-      // Adiciona botões de áudio para cada exemplo
-      document.querySelectorAll('#exercises .example-container p').forEach(p => {
-        const text = p.textContent.trim();
-        const cleanedText = text.replace(/^\d+\.\s*/, '');
-        const btn = document.createElement('button');
-        btn.textContent = '🔊';
-        btn.className = 'tts-btn';
-        btn.type = 'button';
-        btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(cleanedText);
-          utter.lang = 'en-US';
-          utter.rate = 0.8;
-          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
-          if (voice) utter.voice = voice;
-          speechSynthesis.speak(utter);
-        });
-        p.appendChild(btn);
       });
     });
   </script>
