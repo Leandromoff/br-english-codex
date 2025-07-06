@@ -328,38 +328,5 @@
   </div>
 
   <script src="../../script.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttons = document.querySelectorAll('.tab-button');
-      const contents = document.querySelectorAll('.tab-content');
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          buttons.forEach(b => b.classList.remove('active'));
-          contents.forEach(c => c.classList.remove('active'));
-          btn.classList.add('active');
-          document.getElementById(btn.dataset.tab).classList.add('active');
-        });
-      });
-
-      // Adiciona botões de áudio para cada exemplo
-      document.querySelectorAll('#exercises .example-container p').forEach(p => {
-        const text = p.textContent.trim();
-        const cleanedText = text.replace(/^\d+\.\s*/, '');
-        const btn = document.createElement('button');
-        btn.textContent = '🔊';
-        btn.className = 'tts-btn';
-        btn.type = 'button';
-        btn.addEventListener('click', () => {
-          const utter = new SpeechSynthesisUtterance(cleanedText);
-          utter.lang = 'en-US';
-          utter.rate = 0.8;
-          const voice = speechSynthesis.getVoices().find(v => v.lang === 'en-US' || v.name === 'Google US English');
-          if (voice) utter.voice = voice;
-          speechSynthesis.speak(utter);
-        });
-        p.appendChild(btn);
-      });
-    });
-  </script>
 </body>
 </html>
