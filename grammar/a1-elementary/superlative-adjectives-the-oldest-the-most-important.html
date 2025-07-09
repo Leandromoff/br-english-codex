@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BR-English is a responsive site with grammar, vocabulary, listening and reading resources from levels A1 to B2." />
+  <title>Superlative adjectives: the oldest, the most important</title>
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <div class="page">
+  <header>
+    <nav class="navbar">
+      <a href="../../index.html" class="logo">
+        <span class="logo-icon">
+          <span class="bar green"></span>
+          <span class="bar yellow"></span>
+          <span class="bar blue"></span>
+        </span>
+        BR-English
+      </a>
+      <button class="nav-toggle" aria-label="open navigation">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="../../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="content">
+      <h1>Superlative adjectives: the oldest, the most important</h1>
+      <div class="tabs">
+      <button class="tab-button active" data-tab="explanation">Explanation</button>
+      <button class="tab-button" data-tab="exercises">Examples</button>
+    </div>
+    <section id="explanation" class="tab-content active">
+      <p>Conteúdo em breve.</p>
+    </section>
+      <section id="exercises" class="tab-content">
+        <p>Exercícios em breve.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 BR-English. Todos os direitos reservados.
+  </footer>
+  </div>
+
+  <script src="../../script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.tab-button');
+      const contents = document.querySelectorAll('.tab-content');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => b.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
